@@ -1,10 +1,39 @@
-import React from 'react'
+import React from 'react';
+import { FaHome, FaUser, FaCog, FaEnvelope } from 'react-icons/fa';
+import './components/sidebar.css'; // Import the CSS file for styling
 
-function Home() {
+const Sidebar = () => {
   return (
-    <div>
-     <h2>Todo List</h2> 
+    <div className="sidebar">
+      <div className="logo">
+        {/* Replace the src with your own logo image */}
+        <img src="https://via.placeholder.com/40" alt="Logo" />
+        <h1>YourBrand</h1>
+      </div>
+      <ul className="menu">
+        <li>
+          <a href="#home">
+            <FaHome className="icon" /> Home
+          </a>
+        </li>
+        <li>
+          <a href="#profile">
+            <FaUser className="icon" /> Profile
+          </a>
+        </li>
+        <li>
+          <a href="#messages">
+            <FaEnvelope className="icon" /> Messages
+          </a>
+        </li>
+        <li>
+          <a href="#settings">
+            <FaCog className="icon" /> Settings
+          </a>
+        </li>
+      </ul>
     </div>
-  )
-}
-export default Home
+  );
+};
+
+export default Sidebar;
