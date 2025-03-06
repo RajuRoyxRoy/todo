@@ -1,39 +1,25 @@
-import React from 'react';
-import { FaHome, FaUser, FaCog, FaEnvelope } from 'react-icons/fa';
-import './components/sidebar.css'; // Import the CSS file for styling
+import React, { useState } from 'react'; // Import useState
+import Create from './Create';
 
-const Sidebar = () => {
+function Home() {
+  const [todos, setTodos] = useState([]);   
+
   return (
-    <div className="sidebar">
-      <div className="logo">
-        {/* Replace the src with your own logo image */}
-        <img src="https://via.placeholder.com/40" alt="Logo" />
-        <h1>YourBrand</h1>
-      </div>
-      <ul className="menu">
-        <li>
-          <a href="#home">
-            <FaHome className="icon" /> Home
-          </a>
-        </li>
-        <li>
-          <a href="#profile">
-            <FaUser className="icon" /> Profile
-          </a>
-        </li>
-        <li>
-          <a href="#messages">
-            <FaEnvelope className="icon" /> Messages
-          </a>
-        </li>
-        <li>
-          <a href="#settings">
-            <FaCog className="icon" /> Settings
-          </a>
-        </li>
-      </ul>
+    <div>
+      <h1>Todo list</h1>
+      <Create />
+      {
+        todos.length === 0 ? 
+        <div> No Records</div>
+        :
+        todos.map((todo, index) => (
+          <div key={index}> {/* Add a unique key */}
+            {todo}
+          </div>
+        ))
+      }
     </div>
   );
-};
+}
 
-export default Sidebar;
+export default Home;
