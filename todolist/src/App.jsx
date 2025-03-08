@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import'./components/raju.css'
 import Home from './Home'
 
 
